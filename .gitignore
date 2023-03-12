@@ -1,0 +1,14 @@
+*.bak
+*.bd
+bin/
+*.class
+.idea/
+*.iml
+# I need wiremock jar
+# *.jar
+*.log
+/logs
+out/
+target/
+*.trace
+*.war

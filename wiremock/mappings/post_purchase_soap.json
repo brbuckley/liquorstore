@@ -1,0 +1,14 @@
+{
+  "request": {
+    "url": "/liquorstore/com",
+    "method": "POST"
+  },
+  "response": {
+    "status": 200,
+    "body": "<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S='http://schemas.xmlsoap.org/soap/envelope/' xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'><SOAP-ENV:Header/><S:Body><ns4:supplierresponse xmlns:ns2='http://www.liquorstore.com/supplierrequest' xmlns:ns3='http://www.liquorstore.com/supplierresponse' xmlns:ns4='http://www.liquorstore.com/response' xmlns:ns5='http://www.liquorstore.com/request'><id>SUB0000001</id><purchase_id>{{xPath request.body '/Envelope/Body/supplierrequest/id/text()'}}</purchase_id></ns4:supplierresponse></S:Body></S:Envelope>",
+    "transformers": ["response-template"],
+    "headers": {
+      "Content-Type": "text/xml; charset=utf-8"
+    }
+  }
+}

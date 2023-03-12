@@ -1,0 +1,13 @@
+{
+  "request": {
+    "url": "/liquorstore/com?wsdl",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "wsdl.xml",
+    "headers": {
+      "Content-Type": "text/xml;charset=utf-8"
+    }
+  }
+}

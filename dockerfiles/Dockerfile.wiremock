@@ -1,0 +1,7 @@
+FROM openjdk:11
+
+COPY wiremock /target/wiremock
+
+EXPOSE 8081
+
+CMD ["java","-jar","/target/wiremock/wiremock-jre8-standalone-2.33.2.jar","--port","8081","--global-response-templating","--root-dir","target/wiremock"]
