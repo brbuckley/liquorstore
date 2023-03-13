@@ -94,7 +94,10 @@ services:
   customer-ms:
     container_name: customer
     hostname: customer
-    image: ghcr.io/bbuckley/customerms
+    environment:
+      - ID=client_id
+      - SECRET=client_secret
+    image: ghcr.io/brbuckley/customerms
     depends_on:
       - customer-postgres
       - rabbitmq
@@ -115,7 +118,7 @@ services:
   product-ms:
     container_name: product
     hostname: product
-    image: ghcr.io/bbuckley/productms
+    image: ghcr.io/brbuckley/productms
     depends_on:
       - product-postgres
     ports:
@@ -136,11 +139,9 @@ services:
     container_name: purchase
     hostname: purchase
     environment:
-      - POSTGRES_USER=brendan
-      - POSTGRES_PASSWORD=123456
-      - POSTGRES_DB=purchasems
-      - POSTGRES_HOST_AUTH_METHOD=trust
-    image: ghcr.io/bbuckley/purchasems
+      - ID=client_id
+      - SECRET=client_secret
+    image: ghcr.io/brbuckley/purchasems
     depends_on:
       - purchase-postgres
       - rabbitmq
@@ -150,21 +151,21 @@ services:
   adapter-a:
     container_name: adapter-a
     hostname: adapter-a
-    image: ghcr.io/bbuckley/restadapter
+    image: ghcr.io/brbuckley/restadapter
     depends_on:
       - rabbitmq
 
   adapter-b:
     container_name: adapter-b
     hostname: adapter-b
-    image: ghcr.io/bbuckley/soapadapter
+    image: ghcr.io/brbuckley/soapadapter
     depends_on:
       - rabbitmq
 
   adapter-c:
     container_name: adapter-c
     hostname: adapter-c
-    image: ghcr.io/bbuckley/avroadapter
+    image: ghcr.io/brbuckley/avroadapter
     depends_on:
       - rabbitmq
 
@@ -179,7 +180,7 @@ services:
   supplier-c:
     container_name: supplier-c
     hostname: supplier-c
-    image: ghcr.io/bbuckley/avrosupplier
+    image: ghcr.io/brbuckley/avrosupplier
     depends_on:
       - rabbitmq
 
