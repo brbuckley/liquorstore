@@ -94,6 +94,7 @@ services:
   customer-ms:
     container_name: customer
     hostname: customer
+    # ToDo: Change to your valid credentials
     environment:
       - ID=client_id
       - SECRET=client_secret
@@ -138,6 +139,7 @@ services:
   purchase-ms:
     container_name: purchase
     hostname: purchase
+    # ToDo: Change to your valid credentials
     environment:
       - ID=client_id
       - SECRET=client_secret
