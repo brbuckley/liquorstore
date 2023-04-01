@@ -79,6 +79,7 @@ services:
     restart: always
     ports:
       - "15672:15672"
+      - "5672:5672"
 
   customer-postgres:
     container_name: customer-postgres
